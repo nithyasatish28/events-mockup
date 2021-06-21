@@ -1,0 +1,656 @@
+.container { 
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.carousel {
+    overflow: hidden;
+    /* max-width: 800px; */
+    position: relative;
+}
+
+.carousel .carousel_item,
+.carousel .carousel_item--hidden {
+    display: none;
+}
+
+.carousel .carousel_item img {
+    width: 100%;
+    /* max-width: 800px; */
+    height: 500px;
+}
+
+.carousel .carousel_item--visible {
+    display: block;
+    animation: fadeVisibility 0.5s;
+}
+
+.carousel .carousel_actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel .carousel_actions button {
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+}
+
+.carousel .carousel_actions button#carousel_button--prev {
+    margin-left: 20px;
+}
+
+.carousel .carousel_actions button#carousel_button--next {
+    margin-right: 20px;
+}
+
+@keyframes fadeVisibility {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: opacity linear;
+    }
+}
+
+
+
+/* 
+=========================================================================
+                                FONTS
+=========================================================================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+/* @import url('./fonts/Brusher-Regular.ttf'); */
+
+@font-face {
+    font-family: Brusher;
+    src: url('../fonts/Brusher-Regular.otf');
+  }
+/* 
+=========================================================================
+                                VARIABLES
+=========================================================================
+*/
+:root {
+    /* fonts variables */
+    --ff-primary: 'Brusher', sans-serif;
+    --ff-secondary: 'Lato', sans-serif;
+    /* colours for background and font */
+    --bg-dark: #011F26;
+    --bg-light: #052f38;
+    --bg-white: #fff;
+    --bg-maroon: #6A041D;
+    --bg-body: #F2E4E4;
+    /* button radius */
+    --radius: 50px;
+    /* button transition */
+    --transition: all 0.3s linear;
+}
+
+body{
+    font-family: var(--ff-secondary);
+    line-height: 1.6;
+    background-color: var(--bg-body) ;
+}
+
+/* --------------------------------------------------------------nav bar  styling-------------------------------------------------------------- */
+
+.nav-header{
+    padding: 1em;
+    height: auto;
+    position: relative;
+    z-index: 999;
+    align-items: center;
+}
+
+svg:hover {
+    fill: #052f38;
+    cursor: pointer;
+}
+
+.nav-header .flex {
+    justify-content: space-around;
+}
+
+.nav-header img{
+    cursor: pointer;
+}
+
+
+.logo{
+    width: auto;
+    height: 80px;
+}
+
+/* --------------------------------------------------------------showcase styling-------------------------------------------------------------- */
+
+.showcase{
+    background-image: url("/images/bg_img_hero.png");
+    position: relative;
+    height: 84vh;
+    overflow: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heading-1{
+    font-family: var(--ff-primary);
+    color: var(--bg-white);
+}
+.showcase-text{
+    text-align: center;
+    padding-top: 200px;
+}
+.showcase-text .btn{
+    background-color: var(--bg-maroon);
+    transition: var(--transition);
+}
+.showcase-text .btn:hover{
+    background-color: var(--bg-body);
+    color: var(--bg-maroon);
+}
+.showcase-text a{
+    margin-top: 70px;
+}
+
+/* --------------------------------------------------------------winners styling-------------------------------------------------------------- */
+
+.winners{
+    background-color:var(--bg-white);
+    /* padding:26px; */
+}
+.winner-head{
+    text-align: center;
+    padding: 20px;
+}
+.winner-head h1{
+    color: var(--bg-white);
+    background-color: var(--bg-dark);
+    border-radius: 50px;
+    margin: 0 16em;
+}
+
+.winners-list h3{
+    text-align: left;
+}
+.winners-list h1{
+    font-family: var(--ff-primary);
+}
+
+.winners .grid-3{
+    align-items: flex-end;
+}
+
+
+#win_img{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#win_img2{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#win_img3{
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+/* The modal (background) */
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--bg-body);
+    background-color: rgba(0,0, 0, 0.9);
+}
+
+.modal-content{
+    margin: auto;
+    display: block;
+    width: 60%;
+    max-width: 400px;
+}
+
+#caption{
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.modal-content, #caption{
+    -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+/* --------------------------------------------------------------you can styling-------------------------------------------------------------- */
+
+.youcan-head{
+    text-align: center;
+    color: var(--bg-dark);
+}
+
+.youcan-head h1{
+    font-family: var(--ff-primary);
+}
+
+.youcan-head h3{
+    margin-bottom:15px;
+}
+
+.cards{
+    display: flex;
+    background-color: var(--bg-white);
+    padding:26px;
+}
+
+.card{
+    background-color: #034959;
+    color: var(--bg-white);
+    border-radius: 500px;
+    padding: 50px;
+    margin: 10px auto;
+    text-align: center;
+    height: 15rem;
+    width: 15rem;
+}
+.card h2{
+    font-family: var(--ff-primary);
+}
+
+.youcan-details{
+    background-color: var(--bg-white);
+}
+.youcan-details .container{
+    padding: 20px;
+}
+
+/* ------------------------------------------------------------get started styling------------------------------------------------------------ */
+
+.get-started h1{
+    font-family: var(--ff-primary);
+    color: var(--bg-dark);
+}
+.get-started h2{
+    font-family: var(--ff-primary);
+    background-color: var(--bg-maroon);
+    color: var(--bg-white);
+}
+
+.get-started .container{
+    margin-bottom: 3em;
+}
+
+.gs-cards{
+    margin: 1em;
+}
+
+.gs-card{
+    padding: 80px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gs-card:hover{
+    transform: scale(1.05);
+}
+
+/* --------------------------------------------------------------footer styling-------------------------------------------------------------- */
+.footer{
+    background-color: var(--bg-dark);
+    padding: 3em 0;
+    color: var(--bg-white);
+}
+
+.foot-left img{
+    width: auto;
+    height: 80px;
+}
+
+.foot-right .flex{
+    justify-content: space-between;
+}
+
+.foot-right a{
+    color: var(--bg-white);
+}
+
+.footer h4{
+    text-align: right;
+}
+
+.footer h2{
+    font-family: var(--ff-primary);
+}
+
+
+
+/* media queries */
+@media screen and (max-width: 768px) {
+    .showcase{
+        height: 83vh;
+    }
+    .showcase h1{
+        font-size: 72px;
+    }
+    .showcase-text{
+        padding-top: 180px;
+    }
+    .winner-head h1{
+        margin: 0 10em;
+    }
+    .winners .grid-3{
+        grid-template-columns: 1fr;
+    }
+    .youcan-details .card{
+        height: 10rem;
+        width: 10rem;
+        padding: 30px;
+    }
+    .youcan-head h1{
+        font-size: 64px;
+    }
+    .youcan-head h3{
+        font-size: 24px;
+    }
+    .youcan-details h3{
+        font-size: 16px;
+    }
+    .youcan-details h2{
+        font-size: 24px;
+    }
+    .get-started h1{
+        font-size: 64px;
+    }
+    .gs-cards h2{
+        font-size: 48px;
+    }
+    .gs-cards p{
+        font-size: 16px;
+    }
+    .gs-card {
+        padding: 50px;
+    }
+}
+/* 
+===============
+ABOUT STYLING
+=============== 
+*/
+
+.about-head h1{
+    font-family: var(--ff-primary);
+    background-color: var(--bg-maroon);
+    border-radius: 218px;
+    padding: 5rem 2rem;
+    color: var(--bg-body);
+    margin: 1rem 0;
+}
+.about-title{
+    color: var(--bg-dark);
+}
+.about-grid h1{
+    font-family: var(--ff-primary);
+    padding: 200px 0;
+}
+.about-grid p {
+    padding: 3rem;
+}
+.about-grid {
+    display: grid;
+    gap: 20px;
+}
+.bg-img > .grid-item{
+    background-image: url("../images/about_svg1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+    width: auto;
+}
+.bg-img > .grid-item2{
+    background-image: url("../images/about_svg2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: auto;
+    width: auto;
+}
+
+/* collections */
+a {
+    text-decoration: none;
+  }
+  ul {
+    list-style:none;
+    text-align:left;
+  }
+  
+  ul li{
+    padding:10px;
+  }
+  .artworks .grid{
+      grid-template-columns: 10% 90%;
+  }
+  .grid-left{
+    background-color: grey;
+    border-radius:15px;
+  }
+  .collection-head{
+      height: 60vh;
+      background-color: violet;
+      margin: 1em;
+  }
+.collection-grid {
+    margin: 1em 0;
+}
+
+/* events */
+.newsletter {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.news-head{
+    width: 400px;
+    border-radius: var(--radius);
+    margin: 0 auto;
+    background-color: var(--bg-white);
+}
+
+.news-head input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: var(--radius);
+}
+
+.news-head input:focus{
+    background-color: whitesmoke;
+    border-style: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+
+.news-head .btn{
+    border: none;
+    padding: 10px;
+    margin: 0 140px;
+}
+
+
+/* calender */
+
+  button {
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  #top {
+    padding: 10px;
+    color: #d36c6c;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+  #top button {
+    background-color:#92a1d1;
+  }
+  #container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  #weekdays {
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #247BA0;
+    margin: auto;
+  }
+  #weekdays div {
+    width: 100px;
+    margin: 10px;
+  }
+  #calendar {
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .day:hover {
+    background-color: #e8faed;
+  }
+  
+  .day + #currentDay {
+    background-color:#e8f4fa;
+  }
+  .event {
+    font-size: 10px;
+    padding: 3px;
+    background-color: #58bae4;
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+  }
+  .padding {
+    cursor: default !important;
+    background-color: #FFFCFF !important;
+    box-shadow: none !important;
+  }
+  #newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: #e8f4fa;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+  }
+  #eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+  }
+  #eventTitleInput.error {
+    border: 2px solid red;
+  }
+  #cancelButton, #deleteButton {
+    background-color: #d36c6c;
+  }
+  #saveButton, #closeButton {
+    background-color: #92a1d1;
+  }
+  #eventText {
+    font-size: 14px;
+  }
+  #modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+  }

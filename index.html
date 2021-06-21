@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="utilities.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- nav bar -->
+<header>
+    <section class="nav-header">
+        <nav class="container ">
+            <!-- links -->
+                <ul class="flex  links">
+                    <a href="/"><img src="images/logodraftKM.png" class="logo" alt="logodraftKM"></a>
+                    <li><a href="/"  class="btn">Home</a></li>
+                    <li><a href="/about"  class="btn">About Us</a></li>
+                    <li><a href="/collection"  class="btn">Collections</a></li>
+                    <svg id="nav-svg" width="50" height="50" viewBox="0 0 84 84" xmlns="http://www.w3.org/2000/svg" fill="#011F26">
+                        <path  id="user-bg" d="M84 42C84 65.1963 65.1963 84 42 84C18.8037 84 0 65.1963 0 42C0 18.8037 18.8037 0 42 0C65.1963 0 84 18.8037 84 42Z" />
+                        <path id="user-line"  d="M49.7088 40.2583C52.8234 37.8969 54.8412 34.1448 54.8412 29.9266C54.8412 22.799 49.0807 17 41.9997 17C34.9193 17 29.1588 22.799 29.1588 29.9266C29.1588 34.1448 31.176 37.8969 34.2907 40.2583C25.9515 43.4094 20 51.5177 20 61H23.9735C23.9735 50.9938 32.0603 42.8536 42.0003 42.8536C51.9397 42.8536 60.0265 50.9938 60.0265 61H64C63.9995 51.5177 58.0485 43.4094 49.7088 40.2583ZM33.1323 29.9266C33.1323 25.0042 37.1099 21 41.9997 21C46.8895 21 50.8672 25.0042 50.8672 29.9266C50.8672 34.849 46.8895 38.8536 41.9997 38.8536C37.1099 38.8536 33.1323 34.849 33.1323 29.9266Z" fill="white"/>
+                    </svg>
+                </ul>
+        </nav>
+    </section>
+</header>
+    
+<!-- carousel -->
+<section>
+    <div class="container">
+        <div class="carousel">
+            <div class="carousel_item carousel_item--visible">
+                <img src="images/img1.jpg" alt="first image">
+            </div>
+            <div class="carousel_item">
+                <img src="images/img2.jpg" alt="second image">
+            </div>
+            <div class="carousel_item">
+                <img src="images/img3.jpg" alt="third image">
+            </div>
+    
+            <div class="carousel_actions">
+                <button id="carousel_button--prev" aria-label="Previous slide"><</button>
+                <button id="carousel_button--next" aria-label="Next slide">></button>
+            </div>
+    
+        </div>
+    </div>
+</section>
+
+
+    <!-- calender -->
+    <section>
+        <div  id="container">
+            <h1 class="text-center md">Check out our events<br> ENROLL your favourite</h1>
+            <div id="top">
+                <div id="monthDisplay"></div>
+                <div>
+                   <button id="backButton">Back</button>
+                   <button id="nextButton">Next</button>
+                </div>
+            </div>
+    
+            <div id="weekdays">
+                <div>Sunday</div>
+                <div>Monday</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Friday</div>
+                <div>Saturday</div>
+            </div>
+    
+            <div id="calendar">
+    
+            </div>
+        </div>
+    
+        
+        <div id="newEventModal">
+            <h2>New Event</h2>
+            <input id="eventTitleInput" placeholder="Event Title" />
+            <button id="saveButton">Save</button>
+            <button id="cancelButton">Cancel</button>
+        </div>
+    
+        <div id="deleteEventModal">
+            <h2>Event</h2>
+            <p id="eventText"></p>
+    
+            <button id="deleteButton">Delete</button>
+            <button id="closeButton">Close</button>
+        </div>
+    
+    
+        <div id="modalBackDrop"></div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container my-1">
+            <form class="news-head p-2">
+                <h3 class="text-center py-2">Get notified about the latest events</h3>
+                <label for="name">Name:</label>
+                <input type="text" name="name" class="my-1 px-1">
+                <label for="email">Email:</label>
+                <input type="email" name="email" class="my-1 px-1">
+                <label for="phone">Phone no.:</label>
+                <input type="tel" name="phone" class="my-1 px-1">
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
+
+
+<!-- footer -->
+<footer>
+<section class="footer">
+    <div class="container grid">
+        <div class="foot-left text-center mx-2">
+            <img src="/images/logodraftKM.png" alt="logo">
+            <h2 class="p-3">Make<br>Art-Time<br>Worthy</h2>
+        </div>
+        <div class="foot-right mx-1">
+            <ul class="flex py-2">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="#">Enquire</a></li>
+            </ul>
+            <ul class="flex py-2">
+                <li><a href="/events">Events</a></li>
+                <li><a href="/auctions">Auctions</a></li>
+                <li><a href="/exhibition">Exhibition</a></li>
+                <li><a href="/class">online class</a></li>
+            </ul>
+            <ul class="flex py-2 ul-social">
+                <a href="/" class="px-2">
+                    <i class="fab fa-facebook-f smd"></i>
+                </a>
+                <a href="/" class="px-2">
+                    <i class="fab fa-instagram smd"></i>
+                </a>
+                <a href="/" class="px-2">
+                    <i class="far fa-envelope smd"></i>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <hr class="container">
+    <h4 class="sm container">&copy; <span id="date"></span> Kala Mandira</h4>
+</section>
+</footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
